@@ -2,7 +2,8 @@
 
 Split a video file into separate takes based on embedded Linear Timecode (LTC) – even when the LTC is non-contiguous, resets, or uses the non-standard "half-speed" (1200 baud) mode.
 
-Perfect for:
+Use for:
+- Single long recording with multiple non-contiguous sections of LTC (my personal use case, filming multiple takes to an LTC that tracks my DAW project for multiple layers of music that rewinds the timecode and has gaps)
 - Multicam shoots where the timecode generator was left in free-run
 - Files generated with https://www.calvinsundaystudios.com/ltc (including the "Half Speed" option)
 - Recordings with long silences or backwards-jumping timecode
@@ -20,21 +21,21 @@ Works on Windows, macOS, Linux – only requires Python + FFmpeg.
 
 ## Installation
 
-# Install FFmpeg (if not already installed)
-# Windows (conda): conda install -c conda-forge ffmpeg
-# macOS: brew install ffmpeg
-# Linux: sudo apt install ffmpeg
+Install FFmpeg (if not already installed)
+- Windows (conda): conda install -c conda-forge ffmpeg
+- macOS: brew install ffmpeg
+- Linux: sudo apt install ffmpeg
 
-# Install Python dependencies
-pip install numpy soundfile ffmpeg-python
+Install Python dependencies
+- pip install numpy soundfile ffmpeg-python
 
 ## Usage
 
-# Basic – auto-detects 2400-baud or 1200-baud LTC
-python ltc_split.py "path/to/your_video.mp4" 30
+Basic – auto-detects 2400-baud or 1200-baud LTC
+- python ltc_split.py "path/to/your_video.mp4" 30
 
-# Specify frame rate if not 30 fps
-python ltc_split.py "my_video.mp4" 29.97
+Specify frame rate if not 30 fps
+- python ltc_split.py "my_video.mp4" 29.97
 
 Output goes to a "splits/" folder next to your video.
 
