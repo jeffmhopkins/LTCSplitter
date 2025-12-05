@@ -37,8 +37,19 @@ Basic – auto-detects 2400-baud or 1200-baud LTC
 Specify frame rate if not 30 fps
 - python ltc_split.py "my_video.mp4" 29.97
 
-Output goes to a "splits/" folder next to your video.
+## Windows Drag-and-Drop (recommended for Windows users)
 
-Example result:
-splits/my_video_LTC_take_01_0s.mp4
-splits/my_video_LTC_take_02_38s.mp4
+- Open drag_and_drop_ltc_splitter.bat in Notepad
+- Edit only these two lines at the top:batset "CONDA_ROOT=C:\Users\YOUR_USERNAME\miniconda3"
+- set "SCRIPT_PATH=C:\full\path\to\ltc_split.py"(If you don’t use conda, point CONDA_ROOT to your Python or venv folder and it will still work)
+- Save the file
+- Drag one or more video files onto drag_and_drop_ltc_splitter.bat
+
+- The script processes every file automatically and shows clear progress.
+- Tip: Right-click the .bat → Create shortcut → drag the shortcut to your desktop or taskbar for instant access.
+
+- Output goes to a "splits/" folder next to your video.
+
+# Example result:
+- splits/my_video_LTC_take_01_0s.mp4
+- splits/my_video_LTC_take_02_38s.mp4
